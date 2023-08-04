@@ -7,11 +7,9 @@ import { PaginaInicalPage } from '../pages/paginaInicial-page'
 import { ResultadoBuscaPage } from '../pages/resultadoBusca-page'
 import { DetalhesDaMidia } from '../pages/detalhesDaMidia-page'
 
-
-
-const urlInicial = 'https://play.watch.tv.br/login';
-const emailLogin = 'leandrof-skt@hotmail.com';
-const senhaLogin = 'Leahndro53*';
+const urlInicial = process.env.URL_INICIAL
+const emailLogin = process.env.EMAIL;
+const senhaLogin = process.env.SENHA;
 
 let loginPage: LoginPage;
 let selecionarPerfilPage: SelecionarPerfilPage;

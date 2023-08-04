@@ -16,6 +16,7 @@ test.beforeEach(async ({ page }, testInfo) => {
 })
 
 test('login com sucesso', async ({ page }) => {
+  console.log(process.env);
   await loginPage.acessar(urlInicial);
 
   await loginPage.logar(emailLogin, senhaLogin);
@@ -66,5 +67,14 @@ test('Senha em branco', async ({ page }) => {
 
   expect (page.getByRole('button', { name: 'Entrar' })).toBeDisabled;
 
+  await loginPage.printScr('Mensagem');
+});
+
+test('Erro no script/seletor', async () => {
+  await loginPage.acessar(urlInicial);
+  await loginPage.logar(emailLogin, 'abc123456');
+
+  await loginPage.alerta('alerta invalido');
+  
   await loginPage.printScr('Mensagem');
 });
