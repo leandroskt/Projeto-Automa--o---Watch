@@ -38,15 +38,21 @@ Documento de Plano/Roteiro de Testes podem ser encontrados <a href="./features/"
 
 - Ter [**Node.js**](https://nodejs.org/en/) instalado.
 - Ter [**dotenv**](https://github.com/motdotla/dotenv) instalado.
+- Intalar o [**Playwright**](https://playwright.dev/) na pasta.
 
 ## :rocket: Começando
 
 ```bash
 # Clonar o projeto
   $ git clone https://github.com/leandroskt/Projeto-Automacao-Watch-br/
+
 # Configurar o arquivo .env com as informações corretas de acesso
+
+#Intalar o playwright:
+  npm install -D @playwright/test
+
 # Executar os testes
-  npx playwright test
+  npx playwright test --workers 4
 ```
 
 ## Preview
