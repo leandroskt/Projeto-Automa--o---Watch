@@ -16,7 +16,7 @@ E clicar no icone de lupa
 E buscar procurar por 'Megamente'
 Então deve ser exibido o resultado com o conteudo buscado
 
-Cenario 2: Usuário acessa conteúdo.
+Cenario 2: Usuário acessa conteúdo encontrado.
 Dado que eu esteja na tela de resultado com retorno positivo  
 Quando eu clicar no botão Assitir em um resultado exibido
 E clicar no botão Assitir no detalhamento do conteudo
