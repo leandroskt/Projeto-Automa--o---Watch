@@ -23,6 +23,6 @@ export class PaginaInicalPage {
         this.irPara();
         await this.page.locator('app-dropdown-header a').first().click();
         await this.page.getByText('Sair').click();
-        expect (await this.page.getByRole('heading', { name: 'Entrar' })).toBeVisible;
+        expect (this.page.getByRole('heading', { name: 'Entrar' })).toBeVisible;
       }
 }

@@ -7,10 +7,6 @@ export class SelecionarPerfilPage {
         this.page = page
     }
     async selecionarPrimeiroPerfil() {
-            
-        expect(await this.page.getByRole('heading', { name: 'Quem está assistindo?' })).toBeVisible;
-        
         await this.page.locator('.profile-image > .ng-star-inserted').click();
-    
     }
 }

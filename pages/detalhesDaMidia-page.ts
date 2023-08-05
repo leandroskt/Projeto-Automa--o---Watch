@@ -7,8 +7,6 @@ export class DetalhesDaMidia {
         this.page = page
     }
     async executarMidia() {
-        await this.page.waitForLoadState ('networkidle');
-
         await this.page.locator('div >  app-play-button > button').click();
     }
     

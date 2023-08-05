@@ -37,7 +37,6 @@ test.beforeEach(async ({ page }, testInfo) => {
 })
 
 test('executar uma midia e fazer logout', async ({ page }) => {
-  
   const termoPesquisa = 'megamente'
   await loginPage.acessar(urlInicial);
 

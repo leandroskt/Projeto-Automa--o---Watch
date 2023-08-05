@@ -6,14 +6,12 @@ export class ResultadoBuscaPage {
     constructor(page: Page) {
         this.page = page
     }
-    async semResultado() {
-            
+    async semResultado() {     
         const element = this.page.locator(' div.section > p');
         const text = await element.innerText();
         expect (text).toContain ("Nenhum");
     }
     async comResultados() {
-            
         const element = this.page.locator(' div.section > p');
         const text = await element.innerText();
         expect (text).not.toContain ("Nenhum");

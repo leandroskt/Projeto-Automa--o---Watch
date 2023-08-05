@@ -9,12 +9,40 @@ export class LoginPage {
         this.testInfo = testInf;
     }
 
+    // Crédito: 
+    // Código extraido de https://stackoverflow.com/a/76142169
+    // Feito e adaptado por Serhiy Tymoshenko
+    // Tratativa para que todos os elementos serem carregados na tela antes de tirar o printscreen de evidência
+    async debounceDomLog(pollDelay = 50, stableDelay = 350) {
+        let markupPrevious = '';
+        const timerStart = new Date();
+        let isStable = false;
+        let counter = 0;
+        
+        while (!isStable) {
+            ++counter;
+            const markupCurrent = await this.page.content();
+            const elapsed = new Date().getTime() - timerStart.getTime();
+
+            if (markupCurrent == markupPrevious) {
+                isStable = stableDelay <= elapsed;
+            } else {
+                markupPrevious = markupCurrent;
+            }
+            if (!isStable) {
+                await new Promise(resolve => setTimeout(resolve, pollDelay));
+            }
+            // Adicionado um número máximo de tentativas
+            if (counter > 10)
+            {
+                isStable = true;
+            }
+        }
+    }
+
     async printScr(nome: string) {
-        await this.page.waitForLoadState ('networkidle');
-        await this.testInfo.attach(nome, {
-          body: await this.page.screenshot(),
-          contentType: 'image/png',
-        });
+        await this.debounceDomLog(1500, 2000);
+        await this.testInfo.attach(nome, { body: await this.page.screenshot(), contentType: 'image/png' });
     }
     
     async acessar(urlTarget: string) {
@@ -32,11 +60,9 @@ export class LoginPage {
     }
       
     async alerta(mensagem: string){
-        
-        //Seletor para localizar o elemento que exibe mensagens
+        //Seletor para localizar o elemento que exibe mensagens de erro
         const element = this.page.locator('div.error.ng-star-inserted > p');
         const text = await element.innerText();
-
         expect (text).toBe (mensagem);
     }
 }
