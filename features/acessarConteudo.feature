@@ -3,7 +3,7 @@
 
 Funcionalidade: Consumo de conteudo 
 
-Contexto: Dado um usuário com acesso ao site da plataforma que deseja acessar e assistir algum conteúdo.
+Contexto: Dado um usuário com acesso ao site da plataforma que deseja acessar e assistir um conteúdo.
 
 Cenario 1: Usuário encontra conteúdo.
 Dado que eu tenha dados válidos de login
@@ -21,4 +21,5 @@ Dado que eu esteja na tela de resultado com retorno positivo
 Quando eu clicar no botão Assitir em um resultado exibido
 E clicar no botão Assitir no detalhamento do conteudo
 Então deve ser exibido o conteúdo em tela cheia
+
 

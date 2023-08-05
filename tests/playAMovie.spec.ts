@@ -11,6 +11,7 @@ let urlInicial: string;
 let emailLogin: string;
 let senhaLogin: string;
 
+// Verificação se variaveis de ambiente foram configuradas
 if (process.env.URL_INICIAL && process.env.EMAIL && process.env.SENHA) {
   urlInicial = process.env.URL_INICIAL
   emailLogin = process.env.EMAIL;
@@ -19,6 +20,7 @@ if (process.env.URL_INICIAL && process.env.EMAIL && process.env.SENHA) {
   throw new Error("Necessário configurar o arquivo .env antes de executar.")
 }
 
+// Inicialização das variaveis de classes de páginas
 let loginPage: LoginPage;
 let selecionarPerfilPage: SelecionarPerfilPage;
 let paginaInicialPage: PaginaInicalPage;
@@ -30,7 +32,7 @@ test.beforeEach(async ({ page }, testInfo) => {
 })
 
 
-test('executar uma midia', async ({ page }) => {
+test('executar uma midia e fazer logout', async ({ page }) => {
   
   const termoPesquisa = 'megamente'
   await loginPage.acessar(urlInicial);
@@ -68,6 +70,10 @@ test('executar uma midia', async ({ page }) => {
   await detalhesDaMidia.executarMidia();
 
   await loginPage.printScr('Reproduzindo a midia');
+
+  await paginaInicialPage.fazerLogout();
+
+  await loginPage.printScr('Feito o LogOut');
 
 
 });
