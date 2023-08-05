@@ -7,9 +7,17 @@ import { PaginaInicalPage } from '../pages/paginaInicial-page'
 import { ResultadoBuscaPage } from '../pages/resultadoBusca-page'
 import { DetalhesDaMidia } from '../pages/detalhesDaMidia-page'
 
-const urlInicial = process.env.URL_INICIAL
-const emailLogin = process.env.EMAIL;
-const senhaLogin = process.env.SENHA;
+let urlInicial: string;
+let emailLogin: string;
+let senhaLogin: string;
+
+if (process.env.URL_INICIAL && process.env.EMAIL && process.env.SENHA) {
+  urlInicial = process.env.URL_INICIAL
+  emailLogin = process.env.EMAIL;
+  senhaLogin = process.env.SENHA;
+} else {
+  throw new Error("Necessário configurar o arquivo .env antes de executar.")
+}
 
 let loginPage: LoginPage;
 let selecionarPerfilPage: SelecionarPerfilPage;
