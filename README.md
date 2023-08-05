@@ -43,12 +43,15 @@ Documento de Plano/Roteiro de Testes podem ser encontrados <a href="./features/"
 
 ```bash
 # Clonar o projeto
-  $ git clone https://github.com/leandroskt/Projeto-Automacao-Watch-br/
+  git clone https://github.com/leandroskt/Projeto-Automacao-Watch-br/
+
+# Ir para pasta do projeto
+  cd .\Projeto-Automacao-Watch-br
 
 # Configurar o arquivo .env com as informações corretas de acesso
 
-#Intalar o playwright:
-  npm install -D @playwright/test
+#Intalar as dependencias:
+  npm install -d
 
 # Executar os testes
   npx playwright test --workers 4
