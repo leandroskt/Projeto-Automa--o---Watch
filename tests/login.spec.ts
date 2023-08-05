@@ -16,7 +16,6 @@ test.beforeEach(async ({ page }, testInfo) => {
 })
 
 test('login com sucesso', async ({ page }) => {
-  console.log(process.env);
   await loginPage.acessar(urlInicial);
 
   await loginPage.logar(emailLogin, senhaLogin);
