@@ -27,10 +27,14 @@ let paginaInicialPage: PaginaInicalPage;
 let resultadoBuscaPage: ResultadoBuscaPage;
 let detalhesDaMidia: DetalhesDaMidia;
 
+// Inicialização dos objetos das classes 
 test.beforeEach(async ({ page }, testInfo) => {
   loginPage = new LoginPage(page,testInfo);
+  selecionarPerfilPage = new SelecionarPerfilPage(page);
+  paginaInicialPage = new PaginaInicalPage(page);
+  resultadoBuscaPage = new ResultadoBuscaPage(page);
+  detalhesDaMidia = new DetalhesDaMidia(page);
 })
-
 
 test('executar uma midia e fazer logout', async ({ page }) => {
   
@@ -43,19 +47,13 @@ test('executar uma midia e fazer logout', async ({ page }) => {
   
   await loginPage.printScr('Tela Perfil');
 
-  selecionarPerfilPage = new SelecionarPerfilPage(page);
-
   await selecionarPerfilPage.selecionarPrimeiroPerfil();
 
-  await page.waitForURL('**/home', { waitUntil: 'load' });
-  
-  paginaInicialPage = new PaginaInicalPage(page);
+  await page.waitForURL('**/home', { waitUntil: 'load' });  
 
   await loginPage.printScr('Tela Inicial');
 
   await paginaInicialPage.buscarConteudo(termoPesquisa);
-    
-  resultadoBuscaPage = new ResultadoBuscaPage(page);
 
   await resultadoBuscaPage.comResultados();
 
@@ -64,8 +62,6 @@ test('executar uma midia e fazer logout', async ({ page }) => {
   await resultadoBuscaPage.clicarNoPrimeiro();
 
   await loginPage.printScr('Tela do conteudo');
-
-  detalhesDaMidia = new DetalhesDaMidia(page);
   
   await detalhesDaMidia.executarMidia();
 
@@ -86,20 +82,14 @@ test('busca sem resultado', async ({ page }) => {
   
   await loginPage.printScr('Tela Login');
 
-  selecionarPerfilPage = new SelecionarPerfilPage(page);
-
   await selecionarPerfilPage.selecionarPrimeiroPerfil();
 
   await page.waitForURL('**/home', { waitUntil: 'load' });
 
   await loginPage.printScr('Pagina inicial');
   
-  paginaInicialPage = new PaginaInicalPage(page);
-
   await paginaInicialPage.buscarConteudo(termoPesquisa);
     
-  resultadoBuscaPage = new ResultadoBuscaPage(page);
-
   await resultadoBuscaPage.semResultado();
 
   await loginPage.printScr('Tela de resultado');
