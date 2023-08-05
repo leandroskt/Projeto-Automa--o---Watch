@@ -1,6 +1,6 @@
 // @ts-check
 
-import { expect, test } from '@playwright/test';
+import { test } from '@playwright/test';
 import { LoginPage } from '../pages/login-page'
 import { SelecionarPerfilPage } from '../pages/selecionarPerfil-page'
 import { PaginaInicalPage } from '../pages/paginaInicial-page'
@@ -30,7 +30,8 @@ test.beforeEach(async ({ page }, testInfo) => {
 })
 
 
-test('executar uma midia', async ({ page }, testInfo) => {
+test('executar uma midia', async ({ page }) => {
+  
   const termoPesquisa = 'megamente'
   await loginPage.acessar(urlInicial);
 
@@ -71,7 +72,7 @@ test('executar uma midia', async ({ page }, testInfo) => {
 
 });
 
-test('busca sem resultado', async ({ page }, testInfo) => {
+test('busca sem resultado', async ({ page }) => {
   const termoPesquisa = 'asdsadjhk'
   await loginPage.acessar(urlInicial);
 

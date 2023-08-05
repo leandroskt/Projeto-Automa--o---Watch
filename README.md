@@ -23,7 +23,7 @@
 
 ## :page_with_curl: Sobre
 
-Esse projeto tem por objetivo demonstrar os conhecimento em automação e em documentação, solicitados para oportunidade de QA Tester na Watch Brasil.
+Esse projeto tem por objetivo demonstrar os conhecimento em automação e em documentação, solicitados para oportunidade de Analista QA na Watch Brasil.
 
 Diretrizes:
 1. Com o acesso à plataforma fornecido, deve-se criar uma automatização de login, seleção de perfil e acessar um conteúdo da plataforma e assistir (pode ser qualquer tipo de conteúdo disponível na plataforma) e logout da plataforma;
@@ -32,12 +32,11 @@ Diretrizes:
 1. Evidenciar os fluxos testados, exemplificando com imagens de sucesso e erro e do fluxo entre os testes se possível.
 1. Postar seu desenvolvimento no Git (Gilab, Github) e compartilhar o link do projeto para validação da estrutura.
 
-Documento de Plano/Roteiro de Testes podem ser encontrados <a href="./features/">AQUI</a>
+Documento de Plano/Roteiro de Testes podem ser encontrados <a href="./features/">AQUI.</a>
 
 ## :books: Requisitos
 
 - Ter [**Node.js**](https://nodejs.org/en/) instalado.
-- Ter [**dotenv**](https://github.com/motdotla/dotenv) instalado.
 - Intalar o [**Playwright**](https://playwright.dev/) na pasta.
 
 ## :rocket: Começando
@@ -55,7 +54,7 @@ Documento de Plano/Roteiro de Testes podem ser encontrados <a href="./features/"
   npx playwright test --workers 4
 ```
 
-## Preview
+## Report-Example
 <p align="center">
-    <img alt="Preview" src="./assets/preview.png" width="400px" />
+    <img alt="Preview" src="./assets/preview.png" width="400px" href="./playwright-report-example/index.html" />
 </p>
