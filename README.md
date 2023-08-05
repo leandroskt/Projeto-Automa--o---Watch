@@ -39,7 +39,7 @@ Documento de Plano/Roteiro de Testes podem ser encontrados <a href="./features/"
 - Ter [**Node.js**](https://nodejs.org/en/) instalado.
 - Intalar o [**Playwright**](https://playwright.dev/) na pasta.
 
-## :rocket: Começando
+## :rocket: Como executar
 
 ```bash
 # Clonar o projeto
@@ -54,7 +54,10 @@ Documento de Plano/Roteiro de Testes podem ser encontrados <a href="./features/"
   npx playwright test --workers 4
 ```
 
-## Report-Example
+## ☑️ Report-Example
 <p align="center">
-    <img alt="Preview" src="./assets/preview.png" width="400px" href="./playwright-report-example/index.html" />
+  <a  href="./playwright-report-example/index.html">report</a>
+</p>
+<p align="center">
+  <img alt="Preview" src="./assets/preview.png" width="400px" />
 </p>
