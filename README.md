@@ -37,7 +37,6 @@ Documento de Plano/Roteiro de Testes podem ser encontrados <a href="./features/"
 ## :books: Requisitos
 
 - Ter [**Node.js**](https://nodejs.org/en/) instalado.
-- Intalar o [**Playwright**](https://playwright.dev/) na pasta.
 
 ## :rocket: Como executar
 
@@ -48,7 +47,8 @@ Documento de Plano/Roteiro de Testes podem ser encontrados <a href="./features/"
 # Ir para pasta do projeto
   cd .\Projeto-Automacao-Watch-br
 
-# Configurar o arquivo .env com as informações corretas de acesso
+# Configurar o arquivo .env com as informações corretas de acesso 
+# (Editar o arquivo ".\Example.env.txt" com dados válidos de acesso e renomear-lo para ".env" 
 
 #Intalar as dependencias:
   npm install -d
@@ -56,6 +56,12 @@ Documento de Plano/Roteiro de Testes podem ser encontrados <a href="./features/"
 # Executar os testes
   npx playwright test --workers 4
 ```
+
+## 💡 Informações / Notas
+
+- O usuário utilizado nos testes deve ter acessado a plataforma pelo menos uma vez antes de ser utilizado nos testes pois não está mapeado a configuração de primeiro acesso.
+- A performance dos testes está ligeiramente afetada por necessidade de capturas de telas a cada procedimento, o que se faz necessário esperar o carregamento completo das telas.
+- O número máximo de Workers é 4 pois o usuário fornecido para testes está limitado a até 4 telas simultâneas.
 
 ## ☑️ Report-Example
 <p align="center">
